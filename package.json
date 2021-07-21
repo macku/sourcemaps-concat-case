@@ -1,0 +1,16 @@
+{
+  "name": "test-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "concat": "node ./scripts/join-files.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concat-with-sourcemaps": "^1.1.0",
+    "typescript": "^4.3.5"
+  }
+}

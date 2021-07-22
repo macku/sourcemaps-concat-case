@@ -1,9 +1,9 @@
 interface BarInterface {
-    bark(): string;
+    bark(): unknown;
 }
 
 export default class BarkingBar implements BarInterface {
-    bark() {
+    bark(): string {
         return 'bark!';
     }
 }

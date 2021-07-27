@@ -1,0 +1,36 @@
+{
+  "version": 3,
+  "sources": [
+    "webpack:///external {\"var\":\"require('@atlassian/clientside-extensions-registry')\",\"amd\":\"@atlassian/clientside-extensions-registry\"}",
+    "webpack:///./src/main/frontend/unix-epoch.js",
+    "webpack:///./generated-clientside-extension/unix-epoch-js.js"
+  ],
+  "names": [
+    "module",
+    "exports",
+    "require",
+    "getLabel",
+    "time",
+    "Date",
+    "hours",
+    "getHours",
+    "minutes",
+    "getMinutes",
+    "getSeconds",
+    "registerExtension",
+    "api",
+    "setInterval",
+    "updateAttributes",
+    "label",
+    "type",
+    "url"
+  ],
+  "mappings": "4JAAAA,EAAOC,QAAUC,QAAQ,8C,oDCAzB,SAASC,IACL,MAAMC,EAAO,IAAIC,KACXC,EAAQF,EAAKG,WACbC,EAAUJ,EAAKK,aAErB,MAAO,uBAAuBH,KAASE,EAAU,GAAK,IAAIA,IAAYA,KADtDJ,EAAKM,e,OCEzB,EAASC,kBAAkB,4DDMZC,IACXC,YAAY,KACRD,EAAIE,iBAAiB,CACjBC,MAAOZ,OAEZ,KAEI,CACHa,KAAM,OACND,MAAOZ,IACPc,IAAK,4CChBmF,CAAC,SAAW,kB",
+  "file": "unix-epoch-js.js",
+  "sourcesContent": [
+    "module.exports = require('@atlassian/clientside-extensions-registry');",
+    "function getLabel() {\n    const time = new Date();\n    const hours = time.getHours();\n    const minutes = time.getMinutes();\n    const seconds = time.getSeconds();\n    return `The current time is ${hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds}`;\n}\n\n/**\n * @clientside-extension\n * @extension-point index.links\n */\nexport default api => {\n    setInterval(() => {\n        api.updateAttributes({\n            label: getLabel(),\n        });\n    }, 1000);\n\n    return {\n        type: 'link',\n        label: getLabel(),\n        url: 'https://www.timeanddate.com/worldclock/',\n    };\n};\n",
+    "import registry from '@atlassian/clientside-extensions-registry';\n// eslint-disable-next-line import/no-unresolved\nimport plugin from '/Users/madamczak/Projects/atlassian-refapp/refapp-plugins/clientside-extensions-plugin/src/main/frontend/unix-epoch.js';\n\n// we are not in watch mode\n// eslint-disable-next-line no-undef\nregistry.registerExtension('com.atlassian.refapp.clientside-extensions:unix-epoch__js', plugin, {\"location\":\"index.links\"});\n\n// we are in watch mode\nif (module.hot) {\n    module.hot.accept('/Users/madamczak/Projects/atlassian-refapp/refapp-plugins/clientside-extensions-plugin/src/main/frontend/unix-epoch.js', () => {\n        // eslint-disable-next-line global-require,import/no-unresolved,no-undef\n        registry.registerExtension('com.atlassian.refapp.clientside-extensions:unix-epoch__js', require('/Users/madamczak/Projects/atlassian-refapp/refapp-plugins/clientside-extensions-plugin/src/main/frontend/unix-epoch.js').default, {\"location\":\"index.links\"});\n    });\n}\n"
+  ],
+  "sourceRoot": ""
+}

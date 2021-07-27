@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "sources": [
+    "map1.js",
+    "foo.js"
+  ],
+  "names": ["a", "b"],
+  "mappings": "AAAA;;ACAA",
+  "sourcesContent": [
+    "const map = new Map();",
+    "const foo = 'foo';"
+  ]
+}

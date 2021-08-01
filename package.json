@@ -6,8 +6,8 @@
   "scripts": {
     "build": "npm run build:compile && npm run build:inline-and-joins-maps && npm run build:joins-maps",
     "build:compile": "tsc",
-    "build:inline-and-joins-maps": "node scripts/joinFilesWithSourceMaps.js",
-    "build:joins-maps": "node scripts/joinFilesWithSourceMaps.js"
+    "build:inline-and-joins-maps": "node scripts/inlineAndjoinFilesWithSourceMaps.js",
+    "build:joins-maps": "node scripts/inlineAndjoinFilesWithSourceMaps.js"
   },
   "author": "",
   "license": "ISC",

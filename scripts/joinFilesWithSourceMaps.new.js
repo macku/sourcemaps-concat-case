@@ -2,6 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const Concat = require('concat-with-sourcemaps');
 
+/**
+ * Joins two source maps into a single one
+ */
+
 const cases = [
     {
         input: [

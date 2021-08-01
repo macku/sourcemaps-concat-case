@@ -1,9 +1,9 @@
 {
   "version": 3,
   "sources": [
-    "webpack:///external {\"var\":\"require('@atlassian/clientside-extensions-registry')\",\"amd\":\"@atlassian/clientside-extensions-registry\"}",
-    "webpack:///./src/main/frontend/unix-epoch.js",
-    "webpack:///./generated-clientside-extension/unix-epoch-js.js"
+    "module1-webpack:///external {\"var\":\"require('@atlassian/clientside-extensions-registry')\",\"amd\":\"@atlassian/clientside-extensions-registry\"}",
+    "module1-webpack:///./src/main/frontend/unix-epoch.js",
+    "module1-webpack:///./generated-clientside-extension/unix-epoch-js.js"
   ],
   "names": [
     "module",

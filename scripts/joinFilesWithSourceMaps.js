@@ -3,6 +3,10 @@ const path = require('path');
 const Concat = require('concat-with-sourcemaps');
 const {merge: inlineSourceMaps} = require('merge-source-maps/lib/index');
 
+/**
+ * Inlines the sources into source map files, and then joins two source maps into a single one
+ */
+
 const input = [
     './dist/foo-module.js',
     './dist/my-module.js',
